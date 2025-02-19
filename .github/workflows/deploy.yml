@@ -26,7 +26,7 @@ jobs:
           node-version: 18
 
       - name: Cache npm dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -43,7 +43,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: build
-          path: dist # Sørg for at dette er riktig sti til bygget ditt
+          path: dist
 
   deploy:
     needs: build
@@ -51,13 +51,13 @@ jobs:
 
     steps:
       - name: Hent artefakt
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: build
           path: dist
 
       - name: Deploy til GitHub Pages
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
         with:
-          branch: gh-pages # Bytt til riktig gren hvis nødvendig
+          branch: gh-pages
           folder: dist
