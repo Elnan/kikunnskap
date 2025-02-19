@@ -42,6 +42,9 @@ jobs:
       - name: Sjekk størrelsen på dist-mappen
         run: du -sh dist
 
+      - name: List innholdet i dist-mappen
+        run: ls -la dist
+
       - name: Last opp bygget til GitHub Pages
         uses: actions/upload-artifact@v4
         with:
@@ -53,11 +56,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: List artefakter
+        run: ls -la
+
       - name: Hent artefakt
         uses: actions/download-artifact@v4
         with:
           name: github-pages
           path: dist
+
+      - name: List innholdet i dist-mappen etter nedlasting
+        run: ls -la dist
 
       - name: Deploy til GitHub Pages
         uses: actions/deploy-pages@v3
