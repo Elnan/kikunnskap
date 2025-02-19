@@ -56,9 +56,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: List artefakter
-        run: ls -la
-
       - name: Hent artefakt
         uses: actions/download-artifact@v4
         with:
