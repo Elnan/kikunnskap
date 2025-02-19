@@ -60,6 +60,6 @@ jobs:
           path: dist
 
       - name: Deploy til GitHub Pages
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v3
         with:
           artifact_name: github-pages
