@@ -45,12 +45,13 @@ jobs:
       - name: List innholdet i dist-mappen
         run: ls -la dist
 
-      - name: Check for hard links and symlinks
+      - name: Check for symlinks
         run: |
-          find dist -type l -o -type h
-          if [ $? -eq 0 ]; then
-            echo "Found hard links or symlinks in the dist directory, which are not supported."
+          if find dist -type l | read; then
+            echo "Found symbolic links in the dist directory, which are not supported."
             exit 1
+          else
+            echo "No symbolic links found in the dist directory."
           fi
 
       - name: Last opp bygget til GitHub Pages
