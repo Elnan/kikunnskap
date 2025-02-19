@@ -3,10 +3,17 @@ name: Deploy til GitHub Pages
 on:
   push:
     branches:
-      - main # Kjør når vi pusher til main
+      - main # Kjører når du pusher til main
+
+  workflow_dispatch: # Mulighet for manuell deploy fra GitHub Actions
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,10 +31,15 @@ jobs:
       - name: Bygg prosjektet
         run: npm run build
 
-      - name: Deploy til GitHub Pages
+      - name: Last opp bygget til GitHub Pages
         uses: actions/upload-pages-artifact@v2
         with:
-          path: ./dist # Sørg for at vite.config.js peker riktig
+          path: ./dist # Bytt ut med korrekt build-mappe hvis den heter noe annet
 
-      - name: Publiser til GitHub Pages
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy til GitHub Pages
         uses: actions/deploy-pages@v2
