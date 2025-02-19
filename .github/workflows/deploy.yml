@@ -77,9 +77,6 @@ jobs:
       - name: List innholdet i downloaded-artifact-mappen etter nedlasting
         run: ls -la downloaded-artifact
 
-      - name: Verify artifact content
-        run: cat downloaded-artifact/index.html
-
       - name: Deploy til GitHub Pages
         uses: actions/deploy-pages@v4
         with:
