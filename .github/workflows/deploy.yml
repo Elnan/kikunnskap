@@ -45,6 +45,14 @@ jobs:
       - name: List innholdet i dist-mappen
         run: ls -la dist
 
+      - name: Check for hard links and symlinks
+        run: |
+          find dist -type l -o -type h
+          if [ $? -eq 0 ]; then
+            echo "Found hard links or symlinks in the dist directory, which are not supported."
+            exit 1
+          fi
+
       - name: Last opp bygget til GitHub Pages
         uses: actions/upload-artifact@v4
         with:
