@@ -1,5 +1,10 @@
 import React from "react";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  HashRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -18,6 +23,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/spill" element={<Spill />} />
+            <Route path="/kikunnskap" element={<Navigate to="/" />} />
           </Routes>
         </main>
         <Footer />
