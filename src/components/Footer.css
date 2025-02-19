@@ -1,0 +1,210 @@
+footer {
+  background-color: var(--secondary-background-color);
+  width: 100%;
+  height: 200px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  border-top: 1px solid var(--secondary-color);
+  z-index: 99;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  height: 70%;
+}
+
+.separator {
+  width: 300px;
+  height: 0.5px;
+  background-color: var(--secondary-color);
+  margin: 0 auto;
+}
+
+.copyright {
+  font-size: 0.8rem;
+  color: var(--secondary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.copyright span {
+  font-weight: bold;
+}
+
+.copyright .dot {
+  width: 4px;
+  height: 4px;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.trapdoor {
+  width: 110px;
+  height: 60px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.15rem;
+}
+
+/* Dører */
+.trapdoor .top,
+.trapdoor .bottom {
+  height: 50%;
+  background-color: var(--secondary-background-color);
+  position: absolute;
+  width: 100%;
+}
+
+.trapdoor .top {
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trapdoor .bottom {
+  top: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Ikoner */
+.trapdoor .icon-container {
+  width: 60px;
+  height: 30px;
+  position: relative;
+}
+
+.top-icon,
+.bottom-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0) saturate(100%) invert(24%) sepia(19%) saturate(500%)
+    brightness(90%) contrast(95%);
+}
+
+.top-icon {
+  object-position: top;
+}
+
+.bottom-icon {
+  object-position: bottom;
+}
+
+.trapdoor a {
+  font-size: 0.8em;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--secondary-color);
+  text-align: center;
+}
+
+.trapdoor a:hover {
+  color: var(--secondary-color);
+}
+
+/* Trapdoor-effekt */
+.trapdoor:hover .top {
+  top: -55%;
+}
+
+.trapdoor:hover .bottom {
+  top: 110%;
+}
+
+.trapdoor:hover {
+  background: var(--secondary-background-color);
+}
+
+.trapdoor .door {
+  transition:
+    top 400ms,
+    box-shadow 200ms,
+    transform 300ms;
+  background-color: var(--secondary-background-color);
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  z-index: 2;
+  height: 50%;
+  text-align: center;
+}
+
+.trapdoor:hover .door {
+  box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.4);
+  transform: scale(1.08);
+}
+
+/* Responsiv design */
+@media (max-width: 768px) {
+  footer {
+    text-align: center;
+    padding: 2.5rem;
+    z-index: 10;
+    height: 100%;
+  }
+
+  .social-media {
+    flex-wrap: wrap;
+    gap: 20px;
+    height: auto;
+  }
+
+  .trapdoor {
+    width: 80px;
+    height: 40px;
+  }
+
+  .trapdoor .top {
+    top: 1%;
+  }
+
+  .trapdoor .bottom {
+    top: 49%;
+  }
+
+  .trapdoor .icon-container {
+    width: 40px;
+    height: 20px;
+  }
+
+  .top-icon,
+  .bottom-icon {
+    filter: brightness(0) saturate(100%) invert(24%) sepia(19%) saturate(500%)
+      brightness(90%) contrast(95%);
+    object-fit: cover;
+  }
+
+  .copyright {
+    font-size: 0.6rem;
+    gap: 4px;
+  }
+
+  .copyright .dot {
+    width: 3px;
+    height: 3px;
+  }
+
+  .separator {
+    margin-block: 15px;
+    width: 200px;
+    height: 0.3px;
+  }
+}

@@ -1,0 +1,323 @@
+.home {
+  padding: 4rem;
+}
+
+.header {
+  font-size: 4rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.headerKI {
+  color: var(--secondary-color);
+}
+
+.intro {
+  margin-bottom: 2rem;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  padding-block: 4rem;
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tab-buttons button {
+  padding: 0.5rem 1rem;
+  background-color: var(--secondary-color);
+  border: 1px solid var(--secondary-background-color);
+  border-radius: 0.5rem;
+  font-size: 1.25rem;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tab-buttons button:hover {
+  background-color: var(--secondary-background-color);
+  color: white;
+  box-shadow: 0 0 10px 0 var(--secondary-color);
+}
+
+.tab-content .tab-pane {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.tab-content .tab-pane.active {
+  display: block;
+  opacity: 1;
+  color: white;
+}
+
+.show-more {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--secondary-color);
+  color: black;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.show-more:hover {
+  background-color: var(--secondary-background-color);
+  color: white;
+
+  a {
+    color: white;
+  }
+}
+.home-separator {
+  width: 800px;
+  height: 0.5px;
+  background-color: var(--secondary-color);
+  margin-block: 10rem;
+}
+
+.informationPanels {
+  display: flex;
+  height: 730px;
+
+  justify-content: center;
+  gap: 2rem;
+}
+
+.panel {
+  flex: 1;
+  padding: 10px;
+  border: 3px solid var(--secondary-color);
+  border-radius: 0.5rem;
+  overflow: auto;
+
+  h3 {
+    border-bottom: 1px solid var(--secondary-color);
+  }
+}
+
+.leftPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  flex-grow: 1;
+
+  ol > li {
+    margin-top: 10px;
+  }
+}
+
+.rightPanel {
+  display: flex;
+  flex-direction: column;
+}
+
+#listOfAI {
+  margin-top: 6rem;
+}
+
+.logo-grid {
+  --coloumn-count: 3;
+  --row-count: 4;
+  --column-size: 100px;
+  --row-size: 100px;
+
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(
+      var(--coloumn-count),
+      var(--column-size)
+    ) 10px[list-start] 1fr [list-end];
+  grid-template-rows:
+    [list-start] auto repeat(var(--row-count), var(--row-size))
+    auto [list-end];
+  position: relative;
+
+  ul {
+    grid-area: list;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+  }
+
+  img {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    -webkit-user-drag: none;
+    transition: 500ms;
+  }
+
+  a {
+    color: var(--secondary-color);
+  }
+
+  a:is(:hover, :focus) {
+    background-color: var(--secondary-color);
+    color: white;
+
+    img {
+      scale: 2;
+      width: 100px;
+      width: 100px;
+      z-index: 2;
+    }
+  }
+
+  a:not(:hover, :focus) img {
+    animation: pic-fix 500ms;
+  }
+}
+
+@keyframes pic-fix {
+  0%,
+  100% {
+    z-index: 1;
+  }
+}
+
+/* 1. Kolonne */
+.logo-grid li:nth-child(3n + 1) img {
+  grid-column: 1 / 2;
+}
+
+/* 2. Kolonne */
+.logo-grid li:nth-child(3n + 2) img {
+  grid-column: 2 / 3;
+}
+
+/* 3. Kolonne */
+.logo-grid li:nth-child(3n + 3) img {
+  grid-column: 3 / 4;
+}
+
+/* 1. Rad */
+.logo-grid li:nth-child(-n + 3) img {
+  grid-row: 2 / 3;
+}
+
+/* 2. Rad*/
+.logo-grid li:nth-child(n + 4):nth-child(-n + 6) img {
+  grid-row: 3 / 4;
+}
+
+/* 3. Rad */
+.logo-grid li:nth-child(n + 7):nth-child(-n + 9) img {
+  grid-row: 4 / 5;
+}
+
+/* 4. Rad */
+.logo-grid li:nth-child(n + 10):nth-child(-n + 12) img {
+  grid-row: 5 / 6;
+}
+
+/* Responsiv design */
+@media (max-width: 768px) {
+  .home {
+    padding: 2rem;
+  }
+
+  .header {
+    font-size: 2.5rem;
+  }
+
+  .tabs {
+    padding-block: 2rem;
+  }
+
+  .tab-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .tab-buttons button {
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .home-separator {
+    width: 100%;
+    margin-block: 5rem;
+  }
+
+  .informationPanels {
+    flex-direction: column;
+    gap: 1rem;
+    height: auto;
+  }
+
+  .panel {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  #listOfAI {
+    margin-top: 6rem;
+  }
+
+  .logo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.1rem;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      text-align: center;
+    }
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+
+    a {
+      font-size: 1rem;
+      color: var(--secondary-color);
+      display: block;
+    }
+    a:is(:hover, :focus) {
+      background-color: var(--secondary-color);
+      color: white;
+
+      img {
+        scale: 1.7;
+        width: 60px;
+        width: 60px;
+        z-index: 2;
+      }
+    }
+  }
+  .show-more {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .leftPanel {
+    gap: 1rem;
+  }
+
+  .rightPanel {
+    margin-top: 2rem;
+  }
+}
