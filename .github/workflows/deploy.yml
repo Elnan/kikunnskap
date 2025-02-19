@@ -43,12 +43,21 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: build
-          path: ./dist
+          path: dist # Sørg for at dette er riktig sti til bygget ditt
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
 
     steps:
+      - name: Hent artefakt
+        uses: actions/download-artifact@v3
+        with:
+          name: build
+          path: dist
+
       - name: Deploy til GitHub Pages
         uses: actions/deploy-pages@v2
+        with:
+          branch: gh-pages # Bytt til riktig gren hvis nødvendig
+          folder: dist
