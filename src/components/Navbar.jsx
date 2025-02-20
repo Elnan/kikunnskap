@@ -37,7 +37,7 @@ const Navbar = () => {
           <NavLink to="/portfolio">Portfolio</NavLink>
         </li>
         <li className={isActive("/spill") ? "active" : ""}>
-          <NavLink to="/spill">Spill</NavLink>
+          <a href="/spill/">Spill</a>
         </li>
       </ul>
     </nav>

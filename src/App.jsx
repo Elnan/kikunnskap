@@ -22,7 +22,6 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/spill" element={<Spill />} />
             <Route path="/kikunnskap" element={<Navigate to="/" />} />
           </Routes>
         </main>
