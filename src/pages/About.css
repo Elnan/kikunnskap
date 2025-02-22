@@ -27,7 +27,7 @@
 }
 
 .description {
-  padding: 10px 0 10px 40px;
+  padding: 10px 10px 10px 40px;
 }
 
 .btn-section {
@@ -76,6 +76,10 @@
 
   .btn-section button {
     margin-block: 10px;
+    font-size: 0.85rem;
+    padding: 8px 12px;
+    height: auto;
+    line-height: 1.2;
   }
 
   .img-container img {
