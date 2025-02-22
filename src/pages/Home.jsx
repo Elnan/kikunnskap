@@ -24,7 +24,7 @@ const Home = () => {
   return (
     <div className="home">
       <section className="intro">
-        <h1 className="header">
+        <h1 className="home-header">
           Velkommen til <span className="headerKI">KI</span> Kunnskap!
         </h1>
         <p>
@@ -34,8 +34,8 @@ const Home = () => {
         </p>
       </section>
 
-      <section className="tabs">
-        <div className="tab-buttons buttons">
+      <section className="home-tabs">
+        <div className="home-tab-buttons buttons">
           <button
             onClick={() => handleTabChange("hva")}
             className={activeTab === "hva" ? "active" : ""}
@@ -62,7 +62,7 @@ const Home = () => {
           </button>
         </div>
 
-        <div className="tab-content">
+        <div className="home-tab-content">
           <div className={`tab-pane ${activeTab === "hva" ? "active" : ""}`}>
             <h2>Hva er KI?</h2>
             <p>
@@ -254,84 +254,124 @@ const Home = () => {
                 Chat GPT
                 <img src={ChatGPT} alt="Chat GPT logo"></img>
               </Link>
-              : Chat GPT
+              :{" "}
+              <span className="logo-grid-link">
+                <Link to="https://chatgpt.com/">Besøk ChatGPT</Link>
+              </span>
             </li>
             <li>
               <Link>
                 CharacterAI
                 <img src={CharacterAI} alt="CharacterAI logo"></img>
               </Link>
-              : CharacterAI
+              :{" "}
+              <span className="logo-grid-link">
+                <Link to="https://beta.character.ai/">Besøk CharacterAI</Link>
+              </span>
             </li>
             <li>
               <Link>
                 DeepL
                 <img src={DeepL} alt="DeepL logo"></img>
               </Link>
-              : DeepL
+              :{" "}
+              <span className="logo-grid-link">
+                <Link to="https://www.deepl.com/">Besøk DeepL</Link>
+              </span>
             </li>
             <li>
               <Link>
                 Gemini
                 <img src={Gemini} alt="Gemini logo"></img>
               </Link>
-              : Gemini
+              :{" "}
+              <span className="logo-grid-link">
+                <Link to="https://gemini.google.com/">Besøk Gemini</Link>
+              </span>
             </li>
             <li>
               <Link>
                 GitHub Copilot
                 <img src={GitCopilot} alt="GitHub Copilot logo"></img>
               </Link>
-              : GitHub Copilot
+              :{" "}
+              <span className="logo-grid-link">
+                <Link to="https://github.com/features/copilot">
+                  Besøk GitHub Copilot
+                </Link>
+              </span>
             </li>
             <li>
               <Link>
                 Grammarly
                 <img src={Grammarly} alt="Grammarly logo"></img>
               </Link>
-              : Grammarly
+              :{" "}
+              <span className="logo-grid-link">
+                <Link to="https://www.grammarly.com/">Besøk Grammarly</Link>
+              </span>
             </li>
             <li>
               <Link>
                 HuggingFace
                 <img src={HuggingFace} alt="HuggingFace logo"></img>
               </Link>
-              : HuggingFace
+              :{" "}
+              <span className="logo-grid-link">
+                <Link to="https://huggingface.co/">Besøk HuggingFace</Link>
+              </span>
             </li>
             <li>
               <Link>
                 Microsoft Copilot
                 <img src={Microsoft} alt="Microsoft Copilot logo"></img>
               </Link>
-              : Microsoft Copilot
+              :{" "}
+              <span className="logo-grid-link">
+                <Link to="https://copilot.microsoft.com/">
+                  Besøk Microsoft Copilot
+                </Link>
+              </span>
             </li>
             <li>
               <Link>
                 Midjourney
                 <img src={Midjourney} alt="Midjourney logo"></img>
               </Link>
-              : Midjourney
+              :{" "}
+              <span className="logo-grid-link">
+                <Link to="https://www.midjourney.com/">Besøk Midjourney</Link>
+              </span>
             </li>
             <li>
               <Link>
                 Notion
                 <img src={Notion} alt="Notion logo"></img>
               </Link>
-              : Notion
+              :{" "}
+              <span className="logo-grid-link">
+                <Link to="https://www.notion.so/">Besøk Notion</Link>
+              </span>
             </li>
             <li>
               <Link>
                 Perplexity
                 <img src={Perplexity} alt="Perplexity logo"></img>
               </Link>
-              : Perplexity
+              :{" "}
+              <span className="logo-grid-link">
+                <Link to="https://www.perplexity.ai/">Besøk Perplexity</Link>
+              </span>
             </li>
             <li>
               <Link>
                 Quillbot
                 <img src={Quillbot} alt="Quillbot logo"></img>
               </Link>
-              : Quillbot
+              :{" "}
+              <span className="logo-grid-link">
+                <Link to="https://quillbot.com/">Besøk Quillbot</Link>
+              </span>
             </li>
           </ul>
         </div>

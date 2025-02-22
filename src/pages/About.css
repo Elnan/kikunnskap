@@ -1,6 +1,5 @@
 .about-wrapper {
   display: flex;
-  width: 70%;
   background-color: #f2f4ec;
   color: black;
   align-items: stretch;
@@ -54,8 +53,29 @@
 
 /* Responsiv design */
 @media (max-width: 768px) {
+  .about-wrapper {
+    flex-direction: column-reverse;
+    width: 90%;
+  }
+
+  .text-section .header {
+    font-size: 1.25rem;
+  }
+
+  .list-item {
+    padding-block: 5px;
+  }
+
+  .list-item-text {
+    font-size: 1rem;
+    padding-left: 10px;
+  }
   .btn-section {
     margin: 20px;
+  }
+
+  .btn-section button {
+    margin-block: 10px;
   }
 
   .img-container img {

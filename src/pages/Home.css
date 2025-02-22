@@ -2,7 +2,7 @@
   padding: 4rem;
 }
 
-.header {
+.home-header {
   font-size: 4rem;
 }
 
@@ -19,19 +19,19 @@ a {
   margin-bottom: 2rem;
 }
 
-.tabs {
+.home-tabs {
   display: flex;
   flex-direction: column;
   padding-block: 4rem;
 }
 
-.tab-buttons {
+.home-tab-buttons {
   display: flex;
   gap: 1rem;
   margin-bottom: 1rem;
 }
 
-.tab-buttons button {
+.home-tab-buttons button {
   padding: 0.5rem 1rem;
   background-color: var(--secondary-color);
   border: 1px solid var(--secondary-background-color);
@@ -42,19 +42,19 @@ a {
   transition: background-color 0.3s ease;
 }
 
-.tab-buttons button:hover {
+.home-tab-buttons button:hover {
   background-color: var(--secondary-background-color);
   color: white;
   box-shadow: 0 0 10px 0 var(--secondary-color);
 }
 
-.tab-content .tab-pane {
+.home-tab-content .tab-pane {
   display: none;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
 
-.tab-content .tab-pane.active {
+.home-tab-content .tab-pane.active {
   display: block;
   opacity: 1;
   color: white;
@@ -135,10 +135,9 @@ a {
 
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(
-      var(--coloumn-count),
-      var(--column-size)
-    ) 10px[list-start] 1fr [list-end];
+  grid-template-columns:
+    repeat(var(--coloumn-count), var(--column-size))
+    10px[list-start] 1fr [list-end];
   grid-template-rows:
     [list-start] auto repeat(var(--row-count), var(--row-size))
     auto [list-end];
@@ -167,6 +166,11 @@ a {
 
   a {
     color: var(--secondary-color);
+  }
+
+  .logo-grid-link a {
+    color: white;
+    text-decoration: underline;
   }
 
   a:is(:hover, :focus) {

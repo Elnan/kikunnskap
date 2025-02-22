@@ -156,14 +156,14 @@ footer {
 @media (max-width: 768px) {
   footer {
     text-align: center;
-    padding: 2.5rem;
+    padding-bottom: 2.4rem;
     z-index: 10;
     height: 100%;
   }
 
   .social-media {
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
     height: auto;
   }
 
