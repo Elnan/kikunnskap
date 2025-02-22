@@ -261,6 +261,7 @@ a {
   .home-tab-buttons button {
     padding: 0.5rem;
     font-size: 1rem;
+    max-width: 80%;
   }
 
   .show-more {
