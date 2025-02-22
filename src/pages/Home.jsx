@@ -27,11 +27,6 @@ const Home = () => {
         <h1 className="home-header">
           Velkommen til <span className="headerKI">KI</span> Kunnskap!
         </h1>
-        <p>
-          Kunstig Intelligens (KI) er et felt innen datavitenskap som handler om
-          å utvikle maskiner som kan utføre oppgaver som normalt krever
-          menneskelig intelligens.
-        </p>
       </section>
 
       <section className="home-tabs">
