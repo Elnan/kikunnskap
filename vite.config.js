@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/spill/",
+  base: "/",
   optimizeDeps: {
     include: ["@dnb/eufemia"],
   },
